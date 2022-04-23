@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./partials/head') %> 
+
+<body class="cajalogin">
+  <%- include('./partials/header') %> 
+
+
+  <div class="container-total">
+  <!-- categorias carteles -->
+  .
+        <section class="container-products">
+
+            <h2 class="productos-title">Letreros</h2>
+            <ul class="container-stickers">
+              
+              <% Letreros.forEach(pr => { %>
+                <li class="product-box">
+                  <a href="/products/detail/<%= pr.id %>">
+                    <figure class="product-box_image">
+                      <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                    </figure>
+                    <article class="product-box_data">
+                      <h2><%= pr.title %></h2>
+                      <p><%= pr.extra %></p>
+                      <i class="fas fa-truck"></i>
+                    </article>
+                  </a>
+                </li>
+                
+              <%}); %>
+            </ul>
+
+        </section>
+
+  <!-- categoria banners -->
+  <section class="container-products">
+
+    <h2 class="productos-title">Carteles</h2>
+    <ul class="container-stickers">
+      
+      <% Carteles.forEach(pr => { %>
+        <li class="product-box">
+          <a href="/products/detail/<%= pr.id %>">
+            <figure class="product-box_image">
+              <img src="/images/<%= pr.images %>" alt="imagen de producto">
+            </figure>
+            <article class="product-box_data">
+              <h2><%= pr.title %></h2>
+              <p><%= pr.extra %></p>
+              <i class="fas fa-truck"></i>
+            </article>
+          </a>
+        </li>
+        
+      <%}); %>
+    </ul>
+
+</section>
+
+
+
+			
+
+<!-- categoria Lonas -->
+
+      <section class="container-products">
+
+        <h2 class="productos-title">Gigantografias</h2>
+        <ul class="container-stickers">
+          
+          <% Gigantografias.forEach(pr => { %>
+            <li class="product-box">
+              <a href="/products/detail/<%= pr.id %>">
+                <figure class="product-box_image">
+                  <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                </figure>
+                <article class="product-box_data">
+                  <h2><%= pr.title %></h2>
+                  <p><%= pr.extra %></p>
+                  <i class="fas fa-truck"></i>
+                </article>
+              </a>
+            </li>
+            
+          <%}); %>
+        </ul>
+
+      </section>
+
+
+
+  
+
+
+
+<!-- categoria stickers -->
+        <section class="container-products">
+
+          <h2 class="productos-title">Impresiones</h2>
+          <ul class="container-stickers">
+            
+            <% Impresiones.forEach(pr => { %>
+              <li class="product-box">
+                <a href="/products/detail/<%= pr.id %>">
+                  <figure class="product-box_image">
+                    <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                  </figure>
+                  <article class="product-box_data">
+                    <h2><%= pr.title %></h2>
+                    <p><%= pr.extra %></p>
+                    <i class="fas fa-truck"></i>
+                  </article>
+                </a>
+              </li>
+              
+            <%}); %>
+          </ul>
+
+        </section>
+
+
+
+
+        <section class="container-products">
+
+          <h2 class="productos-title">Autoadhesivos</h2>
+          <ul class="container-stickers">
+            
+            <% Autoadhesivos.forEach(pr => { %>
+              <li class="product-box">
+                <a href="/products/detail/<%= pr.id %>">
+                  <figure class="product-box_image">
+                    <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                  </figure>
+                  <article class="product-box_data">
+                    <h2><%= pr.title %></h2>
+                    <p><%= pr.extra %></p>
+                    <i class="fas fa-truck"></i>
+                  </article>
+                </a>
+              </li>
+              
+            <%}); %>
+          </ul>
+
+      </section>
+
+
+      <section class="container-products">
+
+        <h2 class="productos-title">Ploteos</h2>
+        <ul class="container-stickers">
+          
+          <% Ploteos.forEach(pr => { %>
+            <li class="product-box">
+              <a href="/products/detail/<%= pr.id %>">
+                <figure class="product-box_image">
+                  <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                </figure>
+                <article class="product-box_data">
+                  <h2><%= pr.title %></h2>
+                  <p><%= pr.extra %></p>
+                  <i class="fas fa-truck"></i>
+                </article>
+              </a>
+            </li>
+            
+          <%}); %>
+        </ul>
+
+    </section>
+
+
+
+
+
+
+ <div class="wsp">
+  <a href="https://api.whatsapp.com/send?phone=+541138849632">
+    <img src="/images/iconwsp.png" alt="">
+    </a>  
+ </div>
+</div>
+
+  
+
+
+  
+<%- include('./partials/footer') %>
+  <%- include('./partials/scripts') %>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+.editar{
+    margin: auto;
+    width: 90%;
+    font-size: 1.3vw;
+    color: white;
+    text-align: center;
+}
+.editar .btn-primary {
+    font-size: 23px;
+    background-color: orange;
+    padding: 1rem 4rem;
+    border-radius: 10px;
+    border-color: orange;
+    color: #020b20;
+}
+.editar .form-control {
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: orange;
+}
+
+.editar .form-select {
+    font-size: 2rem;
+}
+.editar .form-select {
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: orange;
+   
+}
+
+
+.editar h2 {
+    color: orange;
+    border: 1px solid orange;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: lighter;
+    margin-top: 2rem;
+}
+
+
+.editar input#formGroupExampleInput {
+    padding: 15px;
+    border-color: orange;
+    border-radius: 10px;
+}
+
+.editar form label {
+    font-size: 3rem;
+}
+
+
+@media screen and (min-width: 1200px){
+
+    .editar{
+        width: 50%
+    }
+
+    .editar .form-label {
+        font-size: 3rem;
+    }
+
+}

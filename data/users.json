@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "nombre": "matias",
+    "email": "matias99@gmail.com",
+    "contrasenia": "$2a$10$S4ljXHnXuDqGWttnIViRmu.71iaZ2328SHwjN6LUFU/koPyc6ncDK"
+  },
+  {
+    "id": 2,
+    "nombre": "sergio",
+    "email": "romeosantos@gmail.com",
+    "contrasenia": "$2a$10$.wN7Jqwd7qAfT4.RGHTjtOpNqfS53mM3mExuQfFqK.hFaz52vC.Tq"
+  },
+  {
+    "id": 3,
+    "nombre": "manolo",
+    "email": "romeosantos@gmail.com",
+    "contrasenia": "$2a$10$2zbHwoknwA0/LciTObU.MuBqBBlq0v.HNThSw1NmqBAtzhcOveffy"
+  },
+  {
+    "id": 4,
+    "nombre": "manolo",
+    "email": "manolo@gmail.com",
+    "contrasenia": "$2a$10$M845h1lrJ9lItqWKi/vQE.itmoJYQrNQgCKHAwPg6WERANDlv/gny",
+    "rol": "admin"
+  }
+]

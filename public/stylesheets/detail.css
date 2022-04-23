@@ -1,0 +1,376 @@
+/* 
+main.detail {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e2e54
+}
+
+
+.container-detail-product{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: white;
+  height: 90%;
+  border-radius: 10px;
+}
+
+
+.container-detail-product .lado-izq .arriba img{
+  height: 90%;
+  width: 100%;
+}
+
+.lado-izq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 37%;
+}
+.lado-der {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 95%;
+  width: 40%;
+  padding-left: 6rem;
+  margin-left: 6rem;
+  border-left: 1px solid orange;
+}
+
+.arriba{
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.abajo{
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+
+}
+
+.btns-admin{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 14rem;
+    border-top: 1px solid orange;
+}
+
+
+
+
+.lado-izq .arriba{
+  border-bottom: 1px solid orange;
+}
+.title-description {
+  display: flex;
+  justify-content: center;
+}
+.title-description h2{
+  font-weight: lighter;
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 1px solid orange;
+}
+
+
+.lado-izq  .product-detail-title {
+  font-weight: lighter;
+  font-size: 3.8em;
+  text-align: center;
+  border: 1px solid orange;
+  border-radius: 10px;
+}
+
+.lado-izq .detail-product p{
+  font-size: 24px;
+  text-align: center;
+  font-family: lighter;
+}
+
+
+
+
+ .envios-domi p{
+  font-size: 22px;
+  color: gray;
+  font-weight: lighter;
+}
+
+ .retiro-local p{
+  font-size: 22px;
+  color: gray;
+  font-weight: lighter;
+}
+
+.envios-retiro i{
+  color: gray;
+  font-size: 20px;
+  
+}
+.lado-izq .btn-presupuesto{
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
+.lado-izq .btn-presupuesto a{
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 8px;
+  color: orange;
+}
+
+.btns-admin .btn-edit a{
+  font-size: 17px;
+}
+
+.btns-admin .btn-delete button.btn.btn-danger {
+  font-size: 17px;
+}
+
+
+
+
+.lado-der .abajo{
+
+  border-top: 1px solid orange;
+  border-bottom: 1px solid orange
+
+}
+
+
+.text-description {
+  border: 1px solid orange;
+  border-radius: 10px;
+  padding: 11px;
+}
+
+.text-description h3{
+  font-weight: lighter;
+}
+
+.text-description strong {
+  font-weight: bolder;
+  border-bottom: 1px solid blue;
+}
+
+.lado-der .abajo .btn-presupuesto a:hover{
+  background-color:orange;
+  color: #1e2e54
+}
+
+
+ */
+
+ main.detail {
+  margin: 2rem;
+}
+
+ .container-detail-product {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  justify-content: space-around;
+  border-radius: 20px;
+}
+
+.lado-izq {
+  color:black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 33px;
+}
+.lado-der {
+  margin-bottom: 33px;
+}
+
+.detail .arriba {
+  width: 90%;
+}
+
+
+.detail .product {
+  text-align: center;
+}
+
+
+.detail .arriba-der {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail .text-description {
+  display: flex;
+  width: 90%;
+  margin-top: 1rem;
+  border: 1px solid orange;
+  padding: 19px;
+  border-radius: 10px;
+}
+
+.detail .title-product {
+  border-bottom: 2px solid orange;
+  margin-top: 18px;
+}
+
+.envios-retiro {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.btn-presupuesto{
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid orange;
+  background: orange;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: 3rem;
+  color: white
+}
+.btn-presupuesto:hover{
+  background-color: #030F2D; 
+}
+.btn-presupuesto a:hover{
+     color: white; 
+     
+}
+.detail p {
+  font-size: 13px;
+}
+
+.detail h2 {
+  border-bottom: 1px solid orange;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.detail h3 {
+ 
+  font-weight: lighter;
+}
+
+
+.btns-admin {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+
+
+@media (min-width: 768px){
+
+  main.detail {
+    display: flex;
+    justify-content: center;
+}
+
+  .lado-izq{
+    margin-top: 17px;
+  }
+  .detail .arriba-der {
+    margin-bottom: 18px;
+    margin-top: 4rem;
+}
+
+
+.detail .arriba {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.detail img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.detail .container-detail-product {
+ 
+  width: 90%;
+  
+}
+
+
+}
+
+
+
+@media (min-width: 1200px){
+
+  .container-detail-product{
+    flex-direction: unset;
+    padding: 4rem;
+    border: 2px solid orange;
+  }
+
+
+  .detail .lado-izq {    
+    width: 60%;
+    border-right: 1px solid orange;
+   }
+
+   .detail .container-detail-product {
+    border-radius: 10px;
+   } 
+  .detail .btns-admin a.btn {
+    font-size: large;
+  }
+  .detail .btns-admin button {
+    font-size: large;
+  }
+
+
+      .detail ::before {
+        color: orange;
+      }
+  }
+@media (min-width: 1440px){
+  .container-detail-product{
+    width: 75% !important;
+  }
+}
+
+
+
+
+@media (min-width: 1920px){
+  .detail .title-product h1{
+    font-size: 5rem;
+  }
+
+  .detail p {
+    font-size: 17px;
+  }
+
+
+  .btn-presupuesto {
+    font-size: 25px;
+    padding: 22px;
+   
+}
+
+.detail h3 {
+  font-size: 3rem;
+}
+
+.detail b, strong {
+  font-weight: lighter;
+  border-color: 1px solid orange;
+  border-bottom: 2px solid orange;
+}
+}

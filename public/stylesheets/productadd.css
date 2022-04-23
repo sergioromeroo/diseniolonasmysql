@@ -1,0 +1,65 @@
+.agregar{
+    margin: auto;
+    width: 90%;
+    font-size: 1.3vw;
+    color: white;
+    text-align: center;
+}
+.agregar .btn-primary {
+    font-size: 23px;
+    background-color: orange;
+    padding: 1rem 4rem;
+    border-radius: 10px;
+    border-color: orange;
+    color: #020b20;
+}
+.agregar .form-control {
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: orange;
+}
+
+.agregar .form-select {
+    font-size: 2rem;
+}
+.agregar .form-select {
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: orange;
+   
+}
+
+
+.agregar h2 {
+    color: orange;
+    border: 1px solid orange;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: lighter;
+}
+
+
+.agregar input#formGroupExampleInput {
+    padding: 15px;
+    border-color: orange;
+    border-radius: 10px;
+}
+
+.agregar .form-label {
+    font-size: 3rem;
+}
+
+
+@media screen and (min-width: 1200px){
+
+    .agregar{
+        width: 50%
+    }
+
+    .agregar .form-label {
+        font-size: 3rem;
+    }
+
+}

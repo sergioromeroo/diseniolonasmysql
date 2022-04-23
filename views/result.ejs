@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./partials/head') %> 
+
+<body class="cajalogin">
+  <%- include('./partials/header') %> 
+  
+
+  <div class="container-total">
+    <section class="container-products">
+    
+      <div class="col-12">
+        <h2 class="products-title"> <%= busqueda %> </h2>
+      </div>
+      <ul class="container-stickers">
+        
+    
+        
+            <% result.forEach(pr => { %>
+              <li class="product-box">
+                  <a href="/products/detail/<%= pr.id %>">
+                    <figure class="product-box_image">
+                      <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                    </figure>
+                    <article class="product-box_data">
+                      <h2><%= pr.title %></h2>
+                      <span>descuento % OFF</span>
+                      <p><%= pr.extra %></p>
+                      <i class="fas fa-truck"></i>
+                    </article>
+                  </a>
+              </li>
+            <%}); %>
+    
+          
+          </ul>
+      </section>
+    </div>
+
+
+
+ <div class="wsp">
+  <a href="https://api.whatsapp.com/send?phone=+541138849632">
+    <img src="/images/iconwsp.png" alt="">
+    </a>  
+ </div>
+
+
+
+  
+
+
+  
+<%- include('./partials/footer') %>
+  <%- include('./partials/scripts') %>
+</body>
+
+</html>

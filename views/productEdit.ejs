@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./partials/head') %> 
+
+<body>
+  <%- include('./partials/header') %> 
+
+<main class="editar">
+
+    <h2>EDITAR PRODUCTO</h2>
+        <form action="/products/edit/<%= producto.id %>?_method=PUT" method="post">
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">titulo</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="escribir titulo " name="title" value="<%= producto.title %> ">
+            </div>
+
+            <div class="mb-3">
+                <label for="floatingTextarea">Descripción</label>
+                <textarea class="form-control" id="floatingTextarea" name="description"><%= producto.description %></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">extra demas que quieras agregar</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="extra" value="<%= producto.extra %>">
+              </div>
+          
+          
+            <div class="mb-3">
+                <label for="floatingTextarea">Categoria</label>
+              <select class="form-select" required aria-label="select example" name="category">
+                <option value="">seleccione una categoria</option>
+                <% categorias.forEach(categoria => { %>
+                  <option value="<%= categoria %>" <%= categoria === producto.category ? "selected" : null %> ><%= categoria %></option>
+                <% }) %> 
+                
+              </select>
+              <br>
+          
+            <div class="mb-3">
+              <input type="file" class="form-control" aria-label="file example" ><!-- required -->
+              <div class="invalid-feedback">Example invalid form file feedback</div>
+            </div>
+          
+            <div class="mb-3">
+              <button class="btn btn-primary" type="submit" >Guardar </button>
+            </div>
+          
+    </form>
+</main>
+
+<%- include('./partials/footer') %>
+
+  <%- include('./partials/scripts') %>
+</body>
+
+</html>

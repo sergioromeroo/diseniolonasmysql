@@ -1,0 +1,99 @@
+<header class="header">
+
+	<div class="header-container">
+
+		<div class="nav-header">
+			<!-- <div class="menu-burger">
+				 <img src="https://img.icons8.com/ios-glyphs/30/000000/menu--v1.png"/>
+				 
+			</div> -->
+			 <div class="nav-3">	
+				<nav class="nav-header-menu1">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle color-boton-caca" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+							menu
+                        </button>
+                        <ul class="btn2 dropdown-menu dropdown p-2 mb-2 color-menu-caca" aria-labelledby="dropdownMenuButton" >
+                          <li><a class="dropdown-item" href="/">home</a></li>
+                          <li><a class="dropdown-item" href="/quienessomos">quienes somos?</a></li>
+						  <li><a class="dropdown-item" href="/products/products">nuestros productos</a></li>
+                        </ul> 
+                    </div>
+                </nav>
+			</div> 
+			<a class="logo" href="/">
+				<img src="/images/principal-logo.png" alt="">
+			</a>
+
+			<!-- search -->
+
+			<!-- <div class="col-7 col-md-6">
+				<form action="/products/search" method="GET" class="search-form">
+					<input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
+					<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+				</form>
+			</div> -->
+
+
+			<div class="nav-1">
+				<li class="home">
+					<a href="/">home</a>
+				</li>
+				<li class="caract">
+					<a href="/quienessomos">¿quienes somos?</a>
+				</li>	
+				
+				<li class="header-products">
+					<a href="/products/products">nuestros productos</a>
+				</li>
+			</div> 
+			
+			
+			<% if (locals.userLogin) { %> <!-- una ves logeado q vea lo siguiente -->
+				<div class="nav-2">	
+					<nav class="nav-header-menu">
+						<div class="dropdown">
+							<a class="dropdown-item" href="/">bienvenido <%= locals.userLogin.nombre %></a>
+							<button class="btn btn-secondary dropdown-toggle color-boton-caca" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="fas fa-user-circle"></i>
+							</button>
+							<ul class="btn2 dropdown-menu dropdown p-2 mb-2 color-menu-caca" aria-labelledby="dropdownMenuButton1" >
+								<% if (locals.userLogin.rol === "admin") { %>	<!-- aca si sos admin se va aparecer el agregar producto -->
+									<li><a class="dropdown-item" href="">administrador</a></li>							  
+									<li><a class="dropdown-item" href="/products/add">Agregar producto</a></li>
+								  <% } %>
+							  <li class="cerrar-sesion"><a class="dropdown-item" href="/users/logout">cerrar sesion</a></li>
+							</ul> 
+						</div>
+					</nav>									
+				</div>
+				
+			<% }else{ %><!-- de lo contrario si no esta logeado q se vea lo siguiente -->
+			<div class="nav-2">	
+				<nav class="nav-header-menu">
+                    <div class="dropdown">
+						<a  href="/">logueate</a>
+                        <button class="btn btn-warning dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i>
+                        </button>
+                        <ul class="btn2 dropdown-menu dropdown p-2 mb-2 color-menu-caca" aria-labelledby="dropdownMenuButton1" >
+                          <li><a class="dropdown-item" href="/users/login">Ingresar</a></li>
+                          <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
+                        </ul> 
+                    </div>
+                </nav>									
+			</div>
+			<!-- <i class="far fa-address-card"></i> --> <!-- ICONO SECUNDARIO -->
+			<% } %>
+			
+
+			
+
+
+
+		</div>
+	</div>
+
+</header>
+
+

@@ -1,0 +1,130 @@
+.quienes-somos-container{
+
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: white;
+
+}
+.quienes-somos-container .quienes-somos img{
+    max-width: 62%;
+    min-width: 62%;
+}
+
+
+
+.quienes-somos{
+    display: flex;
+    flex-direction: column-reverse;
+    color: white;
+    text-align: center;
+    width: 90%;
+}
+.quienes-somos-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    border-radius: 40px;
+    background-color: rgb(174, 174, 172);
+    box-shadow: 0px 0px 30px -3px black;
+}
+
+.quienes-somos-text p{
+    font-size: 11px;
+    line-height: 21px;
+}
+
+.quienes-somos h2 {
+    border-bottom: 2px solid orange;
+    font-weight: lighter;
+}
+@media(min-width: 320px) {
+    .quienes-somos-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+        color: black;
+        border-radius: 40px;
+        background-color: rgb(174, 174, 172);
+        box-shadow: 0px 0px 30px -3px black;
+}
+.quienes-somos-container .quienes-somos img{
+    max-width: 100%;
+    min-width: 104%;
+    padding: 30px 10px 25px 5px;
+}
+
+
+}
+
+@media(min-width: 768px) {
+    .quienes-somos-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+        color: black;
+        border-radius: 40px;
+        background-color: rgb(174, 174, 172);
+        box-shadow: 0px 0px 30px -3px black;
+}
+
+
+}
+@media(min-width: 1024px) {
+    .quienes-somos-text{
+        margin-top: 6rem;
+    }
+
+    .quienes-somos-text p{
+        font-size: 17px;
+        line-height: 35px;
+        font-weight: lighter;
+    }
+}
+
+
+@media(min-width: 1440px){
+
+    .quienes-somos{
+        display: flex;
+        flex-direction: unset !important;
+    }
+    .quienes-somos-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* background: white; */
+        color: black;
+        border-radius: 40px;
+        background-color: rgb(174, 174, 172);
+        box-shadow: 0px 0px 30px -3px black;
+
+    }
+
+    .quienes-somos-text p{
+        font-size: 25px;
+        line-height: 38px;
+        font-weight: lighter;
+        width:90%;
+    }
+    
+    .quienes-somos h2 {
+        font-size: 4rem;
+        padding: 14px 0 0 0;
+        border-bottom: 2px solid orange;
+        font-weight: lighter;
+    }
+
+    .quienes-somos-container .quienes-somos img{
+        max-width: 70%;
+        min-width: 70%;
+        padding: 30px 10px 25px 5px;
+    }
+
+
+}
+

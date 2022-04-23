@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./partials/head') %> 
+
+<body>
+  <%- include('./partials/header') %> 
+
+<main class="agregar">
+
+  <H2>AGREGAR PRODUCTO</H2>
+
+    
+    
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">titulo</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="escribir titulo " name="title" value="<%= locals.old && old.title ? old.title : null %>">
+              <h3 class="small alert-danger"><%= locals.errores && errores.title ? errores.title.msg : null%> </h3>
+
+            </div>
+
+
+
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">descripcion</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="extra" value="<%= locals.old && old.extra ? old.extra : null %>">
+                <h3 class="small alert-danger"><%= locals.errores && errores.extra ? errores.extra.msg : null%> </h3>
+              </div>
+          
+          
+            <div class="mb-3">
+              <select class="form-select"  required aria-label="select example" name="category">
+                <option value="">seleccione una categoria</option>
+                <% categorias.forEach(categoria => { %>
+                  <option value="<%= categoria %>"<%= locals.old && old.category === categoria ? 'selected' : null%> ><%= categoria %></option>
+                <% }) %> 
+              </select>
+              <h3 class="small alert-danger"><%= locals.errores && errores.category ? errores.category.msg : null%> </h3>
+
+              <br>
+          
+            <div class="mb-3">
+              <label for="productImagen" class="form-label">imagen</label>
+              <input type="file" class="form-control" id="productImagen" name="images" ><!-- required -->
+              
+            </div>
+          
+            <div class="mb-3">
+              <button class="btn btn-primary" type="submit" >Enviar </button>
+            </div>
+          
+    </form>
+</main>
+
+  
+<%- include('./partials/footer') %>
+  <%- include('./partials/scripts') %>
+</body>
+
+</html>

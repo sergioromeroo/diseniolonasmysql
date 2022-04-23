@@ -1,0 +1,37 @@
+[
+  {
+    "id": 3,
+    "title": "letrero",
+    "extra": "este producto es good pa te lo recomienda tu mama",
+    "images": "images-1648662868386.jpeg",
+    "category": "Letreros"
+  },
+  {
+    "id": 13,
+    "title": "impresora nashe",
+    "extra": "q onda paa anahsee",
+    "images": "images-1648742802580.png",
+    "category": "Autoadhesivos"
+  },
+  {
+    "id": 14,
+    "title": "probando",
+    "extra": "123123",
+    "images": "images-1648761703333.jpeg",
+    "category": "Letreros"
+  },
+  {
+    "id": 15,
+    "title": "letrero nose",
+    "extra": "pude ser pa",
+    "images": "images-1648829097745.jpg",
+    "category": "Letreros"
+  },
+  {
+    "id": 16,
+    "title": "anashje un productito pa",
+    "extra": "tu mama la puta",
+    "images": "images-1649041254210.webp",
+    "category": "Letreros"
+  }
+]

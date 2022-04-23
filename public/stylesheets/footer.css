@@ -1,0 +1,183 @@
+.footer{
+    background-color: #020b20;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container{
+    height: 13rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    width: 80%;
+}
+
+.footer-container a:hover{
+    color: orange ;
+    transition-duration: 0.5s; 
+    /* transition-delay: 0.5s;  */
+}
+
+.footer-container .logo-footer img{
+    height:73px
+}
+
+.footer-container .contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.footer-container .contacto{
+    font-size: 12px;
+}
+
+.footer-container .redes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.footer-container .redes a{
+    font-size: 12px;
+}
+
+.footer .sigamos-conectados{
+    width: 21%;
+    font-size: initial;
+}
+.footer .sigamos-conectados p.title {
+    font-size: 1.75rem;
+    text-align: center;
+}
+.footer .sigamos-conectados .icons-redes{
+    display: flex;
+    justify-content:center
+}
+
+.footer .sigamos-conectados .icons-redes a{
+    padding: 0 20px;
+}
+
+.footer-container .metodos-de-pagos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container .metodos-de-pagos li{
+    font-size: 12px;
+    text-align: center;
+}
+
+.fa-instagram,
+.fa-facebook-f,
+.fa-whatsapp{
+    color: #020b20;
+    /* color: var(--color-naranja); */
+    font-size: 25px;
+    background-color:orange;
+    /* background: rgb(228, 28, 28); */
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 12px;
+
+
+
+
+}
+
+
+@media screen and (min-width: 320px){
+
+    .footer-container{
+        width: 100%;
+    }
+
+    .contacto{
+        display: none !important;
+    }
+    .sigamos-conectados{
+        display: none !important
+    }
+
+    .footer-container .logo-footer img{
+        height: 57px;
+        margin-left: 14px;
+    }
+    .footer-container .metodos-de-pagos{
+        margin-right: 14px;
+    }
+    .footer-container .metodos-de-pagos .title-pagos h3{
+        font-size: 13px;
+    }
+    .footer-container .metodos-de-pagos li{
+        font-size: 10px;
+    }
+    .wsp img{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    .sigamos-conectados{
+        display:flex !important;
+        flex-direction: column !important;
+    }
+
+    .footer .sigamos-conectados .icons-redes a {
+        padding: 0px 10px;
+    }
+    .footer .sigamos-conectados .icons-redes a i{
+        font-size: 15px;
+        height: 40px;
+        width: 40px;
+    }
+
+    .footer .sigamos-conectados p.title {
+        font-size: 14px;
+    }
+    .footer i.fab.fa-facebook-f{
+        font-size: 15px  !important;
+        height: 40px  !important;
+        width: 40px !important;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    .contacto{
+        display: flex !important;
+    }
+
+    .footer .contacto h3 {
+        font-size: 14px;
+    }
+
+
+    .footer .sigamos-conectados .icons-redes {
+        margin-bottom: 10px;
+    }
+
+    .footer-container .metodos-de-pagos .title-pagos h3 {
+        font-size: 14px;
+    }
+
+    .footer-container .metodos-de-pagos li {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .footer-container{
+        justify-content: space-around;
+    }
+
+}

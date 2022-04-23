@@ -1,0 +1,79 @@
+
+.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.register h2{
+    text-align: center;
+    color: orange;
+    padding: 20px;
+}
+.register .form-control{
+    font-size: 2rem;
+}
+
+.register .col-7.mx-auto.mt-5 {
+    width: 90%;
+}
+
+.register .card {
+    border-radius: 10px;
+    border-color: orange;
+}
+
+.register .form-label {
+    font-size: 15px;
+    padding: 0 12px;
+}
+
+.register .col-12 {
+    align-items: center;
+    border-bottom: 1px solid #ffa500a6;
+    padding: 16px 9px 2rem;
+}
+
+.register button.btn.btn-primary {
+    background: orange;
+    border-color: orange;
+    padding: 10px;
+    width: 10rem;
+    color: #030F2D
+}
+
+.register form.row {
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (min-width: 1200px){
+
+    .register button.btn.btn-primary {
+        padding: 2rem;
+        width: 21rem;
+        font-size: 33px;
+        border-radius: 10px;
+    }
+
+    .register .card-body {
+        flex: 1 1 auto;
+        padding: 5rem 4rem;
+    }
+    
+    .register h2 {
+        text-align: center;
+        color: orange;
+        padding: 20px;
+        font-size: 4rem;
+        font-weight: lighter;
+    }
+
+    .register .col-7.mx-auto.mt-5 {
+        width: 60%;
+        margin-bottom: 6rem;
+    }
+
+}
