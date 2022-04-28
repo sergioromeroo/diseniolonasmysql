@@ -3,18 +3,103 @@ const path = require('path');
 const productos = require('../data/products_db');
 const categorias = require('../data/categories_db');
 const {validationResult} = require('express-validator')
+const db = require('../database/models')
 
-module.exports = {//TODO ESTO ES PARA  ME RENDERISE EL INDEX.EJS A HTML
+module.exports = {
     products : (req,res) => {
-        return res.render('products',{
-            productos,
-            Letreros : productos.filter(producto => producto.category === "Letreros"),
-            Carteles : productos.filter(producto => producto.category === "Carteles"),
-            Gigantografias : productos.filter(producto => producto.category === "Gigantografias"),
-            Impresiones : productos.filter(producto => producto.category === "Impresiones"),
-            Autoadhesivos : productos.filter(producto => producto.category === "Autoadhesivos"),
-            Ploteos : productos.filter(producto => producto.category === "Ploteos")
-        })
+
+        let productos = db.Product.findAll();/* traemelo todos */
+        let Letreros = db.Category.findOne({
+            where : {
+                name : 'Letreros'
+            },
+            include : [
+                {
+                    association : 'products',/* incluime la associacion q tiene categoria con producto */
+                    include : [
+                        {association : 'images'}
+                    ]
+                } 
+            ]
+        });
+        let Carteles = db.Category.findOne({
+            where : {
+                name : 'Carteles'
+            },
+            include : [
+                {
+                    association : 'products',/* incluime la associacion q tiene categoria con producto */
+                    include : [
+                        {association : 'images'}
+                    ]
+                } 
+            ]
+        });
+        let Gigantografias = db.Category.findOne({
+            where : {
+                name : 'Gigantografias'
+            },
+            include : [
+                {
+                    association : 'products',/* incluime la associacion q tiene categoria con producto */
+                    include : [
+                        {association : 'images'}
+                    ]
+                } 
+            ]
+        });
+        let Impresiones = db.Category.findOne({
+            where : {
+                name : 'Impresiones'
+            },
+            include : [
+                {
+                    association : 'products',/* incluime la associacion q tiene categoria con producto */
+                    include : [
+                        {association : 'images'}
+                    ]
+                } 
+            ]
+        });
+        let Autoadhesivos = db.Category.findOne({
+            where : {
+                name : 'Autoadhesivos'
+            },
+            include : [
+                {
+                    association : 'products',/* incluime la associacion q tiene categoria con producto */
+                    include : [
+                        {association : 'images'}
+                    ]
+                } 
+            ]
+        });
+        let Ploteos = db.Category.findOne({
+            where : {
+                name : 'Ploteos'
+            },
+            include : [
+                {
+                    association : 'products',/* incluime la associacion q tiene categoria con producto */
+                    include : [
+                        {association : 'images'}
+                    ]
+                } 
+            ]
+        });
+        Promise.all([productos,Letreros,Carteles,Gigantografias,Impresiones,Autoadhesivos,Ploteos])
+        .then(([productos,Letreros,Carteles,Gigantografias,Impresiones,Autoadhesivos,Ploteos]) => {
+            return res.render('products',{
+                productos,
+                Letreros : Letreros.products,
+                Carteles : Carteles.products,
+                Gigantografias : Gigantografias.products,
+                Impresiones : Impresiones.products,
+                Autoadhesivos : Autoadhesivos.products,
+                Ploteos : Ploteos.products
+            })
+        }).catch(error => console.log(error))
+        
     },
 
     add : (req,res) => {
@@ -48,54 +133,79 @@ module.exports = {//TODO ESTO ES PARA  ME RENDERISE EL INDEX.EJS A HTML
         }
     },
 
-    detail : (req,res) => {/* busco producto con el id */
-        let producto = productos.find(producto => producto.id === +req.params.id)
+    detail: (req, res) => {
 
-        return res.render('productDetail',{
-            producto
-        })
+        db.Product.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [
+                { association: 'images' },
+                { association: 'category' }
+            ]
+        }).then(producto => {
+            console.log(producto);
+            db.Category.findOne({
+               /*  where: {
+                    id: producto.categoryId
+                }, */
+                include: [
+                    {
+                        association: 'products',
+                        include: [
+                            { association: 'images' }
+                        ]
+                    }
+                ]
+            }).then(category => {
+                return res.render('productDetail', {
+                    producto,
+                    relacionados: category.products
+                })
+            })
+        }).catch(error => console.log(error))
+
     },
 
-    edit : (req,res) => {
-        let producto = productos.find(producto => producto.id === +req.params.id)
+    edit: (req, res) => {
+        let categorias = db.Category.findAll();
+        let producto = db.Product.findByPk(req.params.id);
+        Promise.all([categorias, producto])
+            .then(([categorias, producto]) => {
+                return res.render('productEdit', {
+                    categorias,
+                    producto
+                })
+            })
 
-        return res.render('productEdit',{
-            categorias,
-            productos,
-            producto
-        })
     },
-
+    
     update : (req,res) => {
-        const {title, description,extra,category} = req.body;
+        const { name, description, categoryId } = req.body;
 
-        let producto = productos.find(producto => producto.id === +req.params.id)
-        let productoEditado = {
-            id : +req.params.id,
-            title,
-            description,
-            extra,
-            category
-        }
-
-        let productosModificados = productos.map(producto => producto.id === +req.params.id ? productoEditado : producto)
-
-        fs.writeFileSync(path.join(__dirname,'..','data','products.json'),JSON.stringify(productosModificados,null,2),'utf-8')/* q se me guarde en el json  */
-
-        res.redirect('/')
+        db.Product.update(
+            {
+                name: name.trim(),
+                description: description.trim(),
+                categoryId
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        ).then(() => res.redirect('/admin'))
+            .catch(error => console.log(error))
     },
     
 
     destroy : (req,res) => {
-        //productos = productos.filter(producto => producto.id !== +req.params.id)  este seria otra opcion tambien debe de las 4 lineas de abajo
-        productos.forEach(producto=>{
-            if(producto.id === +req.params.id){
-                let productoAEliminar = productos.indexOf(producto);
-                productos.splice(productoAEliminar,1)
+        db.Product.destroy({
+            where: {
+                id : req.params.id
             }
-        });
-        fs.writeFileSync(path.join(__dirname,'..','data','products.json'),JSON.stringify(productos,null,2),'utf-8')
-        res.redirect('/products/products')
+        }).then(() => res.redirect('/admin'))
+        .catch(error => console.log(error))
     },
 
 

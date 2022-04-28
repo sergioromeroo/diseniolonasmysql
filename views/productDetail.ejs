@@ -14,18 +14,18 @@
 				
 				<div class="lado-izq">
 					
-						<div class="arriba">
-							<img src="/images/<%= producto.images %>" alt="product image">
-						</div>
+					<div class="arriba">
+						<img src="/images/<%= producto.images[0].file %>" alt="product image">
+					</div>
 						
 						<div class="abajo">	
 							
 							<div class="product">
 								<div class="title-product">
-									<h1 style="font-style: italic;"class="product-detail-title" ><%= producto.title %></h1>
+									<h1 style="font-style: italic;"class="product-detail-title" ><%= producto.name %></h1>
 								</div>
 								<div class="detail-product">
-									<p style="font-style: italic;"><%= producto.extra %></p>
+									<p style="font-style: italic;"><%= producto.description %></p>
 								</div>
 							</div>
 							<div class="envios-retiro">
@@ -107,35 +107,7 @@
     </div>
 
 
-			<!-- 	<div class="col-12 col-lg-4">
-					<article class="product-detail-info">
-						
-							
-						
-						<ul class="actions-list">
-							<li>
-								<i class="fas fa-credit-card"></i>
-								<p>Envios a Domicilio</p>
-								
-							</li>
-							<li>
-								<i class="fas fa-store"></i>
-								<p>Retiro gratis en locales del vendedor</p>
-							</li>
-						</ul>
-
-						<a class="btn btn-outline-secondary invertido" href="https://api.whatsapp.com/send?phone=+541138849632">Solicitar presupuesto</a>
-						<hr>
-
-						<a href="/products/edit/<%= producto.id %>" class="btn btn-success">EDITAR PRODUCTO</a>
-
-						<form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="btn btn-danger">ELIMINAR</button>
-						</form>
-						
-
-					</article>
-				</div -->>
+			
 	
 
 

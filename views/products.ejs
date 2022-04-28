@@ -19,11 +19,11 @@
                 <li class="product-box">
                   <a href="/products/detail/<%= pr.id %>">
                     <figure class="product-box_image">
-                      <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                      <img src="/images/<%= pr.images[0] ? pr.images[0].file  : null %>" alt="imagen de producto">
                     </figure>
                     <article class="product-box_data">
-                      <h2><%= pr.title %></h2>
-                      <p><%= pr.extra %></p>
+                      <h2><%= pr.name %></h2>
+                      <p><%= pr.description %></p>
                       <i class="fas fa-truck"></i>
                     </article>
                   </a>
@@ -44,11 +44,11 @@
         <li class="product-box">
           <a href="/products/detail/<%= pr.id %>">
             <figure class="product-box_image">
-              <img src="/images/<%= pr.images %>" alt="imagen de producto">
+              <img src="/images/<%= pr.images[0] ? pr.images[0].file  : null %>" alt="imagen de producto">
             </figure>
             <article class="product-box_data">
-              <h2><%= pr.title %></h2>
-              <p><%= pr.extra %></p>
+              <h2><%= pr.name %></h2>
+              <p><%= pr.description %></p>
               <i class="fas fa-truck"></i>
             </article>
           </a>
@@ -74,11 +74,11 @@
             <li class="product-box">
               <a href="/products/detail/<%= pr.id %>">
                 <figure class="product-box_image">
-                  <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                  <img src="/images/<%= pr.images[0] ? pr.images[0].file  : null %>" alt="imagen de producto">
                 </figure>
                 <article class="product-box_data">
-                  <h2><%= pr.title %></h2>
-                  <p><%= pr.extra %></p>
+                  <h2><%= pr.name %></h2>
+                  <p><%= pr.description %></p>
                   <i class="fas fa-truck"></i>
                 </article>
               </a>
@@ -105,11 +105,11 @@
               <li class="product-box">
                 <a href="/products/detail/<%= pr.id %>">
                   <figure class="product-box_image">
-                    <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                    <img src="/images/<%= pr.images[0] ? pr.images[0].file  : null %>" alt="imagen de producto">
                   </figure>
                   <article class="product-box_data">
-                    <h2><%= pr.title %></h2>
-                    <p><%= pr.extra %></p>
+                    <h2><%= pr.name %></h2>
+                    <p><%= pr.description %></p>
                     <i class="fas fa-truck"></i>
                   </article>
                 </a>
@@ -132,11 +132,11 @@
               <li class="product-box">
                 <a href="/products/detail/<%= pr.id %>">
                   <figure class="product-box_image">
-                    <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                    <img src="/images/<%= pr.images[0] ? pr.images[0].file  : null %>" alt="imagen de producto">
                   </figure>
                   <article class="product-box_data">
-                    <h2><%= pr.title %></h2>
-                    <p><%= pr.extra %></p>
+                    <h2><%= pr.name %></h2>
+                    <p><%= pr.description %></p>
                     <i class="fas fa-truck"></i>
                   </article>
                 </a>
@@ -157,11 +157,11 @@
             <li class="product-box">
               <a href="/products/detail/<%= pr.id %>">
                 <figure class="product-box_image">
-                  <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                  <img src="/images/<%= pr.images[0] ? pr.images[0].file  : null %>" alt="imagen de producto">
                 </figure>
                 <article class="product-box_data">
-                  <h2><%= pr.title %></h2>
-                  <p><%= pr.extra %></p>
+                  <h2><%= pr.name %></h2>
+                  <p><%= pr.description %></p>
                   <i class="fas fa-truck"></i>
                 </article>
               </a>
