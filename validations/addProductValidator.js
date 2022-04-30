@@ -4,13 +4,13 @@ const bcrypt = require('bcryptjs')
 
 
 module.exports = [
-    check('title')
+    check('name')
     .notEmpty().withMessage('debes ingresar un titulo putarraco'),/* Empty si esta vacio el input q tiene q llenar el usuario */
 
 
-    check('extra')
+    check('description')
     .notEmpty().withMessage('te olvidaste aca dale media pila'),
 
-    check('category')
+    check('categoryId')
     .notEmpty().withMessage('primero selecciona una categoria maestro'),
 ]

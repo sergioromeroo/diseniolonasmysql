@@ -102,36 +102,61 @@ module.exports = {
         
     },
 
-    add : (req,res) => {
-        return res.render('productAdd',{
-            categorias,
-            productos
-        })
+    add: (req, res) => {
+        db.Category.findAll()
+            .then(categorias => {
+                return res.render('productAdd', {
+                    categorias,
+                })
+            }).catch(error => console.log(error))
+
     },
 
-    save : (req,res) =>{
-        let errors = validationResult(req);/* validaciones del back si esta vacio los datos dame error sino hace lo siguiente lo de abajo*/
-        if(errors.isEmpty()){
-            const {title,extra,category,images} = req.body;
-            let producto ={
-                id : productos[productos.length - 1].id + 1,
-                title,     
-                extra,
-                images: req.file ? req.file.filename : 'default-image.png',
-                category
-            }
-            productos.push(producto)    
-            fs.writeFileSync(path.join(__dirname,'..','data','products.json'),JSON.stringify(productos,null,2),'utf-8')/* q se me guarde en el json  */
-            return res.redirect('/products/products')
-        }else{
-            return res.render('productAdd',{
-                categorias,
-                productos,
-                errores : errors.mapped(),
-                old : req.body
-            })
+    save: (req, res) => {
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+            const { name, description, categoryId } = req.body;
+
+            db.Product.create({
+                
+                name: name.trim(),
+                description: description.trim(),
+                categoryId
+
+            }).then(product => {
+
+                if (req.files) {
+                    var images = [];
+                    var imagenes = req.files.map(imagen => imagen.filename);/* capturo las imagenes */
+                    imagenes.forEach(img => {/* recorro el array voy fabricando un objeto  */
+                        var image = {
+                            file: img,
+                            productId: product.id
+                        }
+                        images.push(image)
+                    });
+
+                    db.Image.bulkCreate(images, { validate: true })
+                        .then(() => console.log('imagenes agregadas'))
+                }
+
+                return res.redirect('/admin')
+            }).catch(error => console.log(error))
+
+        } else {
+            db.Category.findAll()
+                .then(categorias => {
+                    return res.render('productAdd', {
+                        categorias,
+                        errores: errors.mapped(),
+                        old: req.body
+                    })
+                }).catch(error => console.log(error))
         }
     },
+
+    
 
     detail: (req, res) => {
 
@@ -154,13 +179,14 @@ module.exports = {
                         association: 'products',
                         include: [
                             { association: 'images' }
-                        ]
+                        ],
+                        /* limit : 4   aca van carrusel de productos relacionados limito a q se vean 4 */
                     }
                 ]
             }).then(category => {
                 return res.render('productDetail', {
                     producto,
-                    relacionados: category.products
+                    relacionados: category.products /* esto por si le quiero agregar productos relacionados abajo un carrusel */
                 })
             })
         }).catch(error => console.log(error))

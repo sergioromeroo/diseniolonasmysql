@@ -15,8 +15,8 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">titulo</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="escribir titulo " name="title" value="<%= locals.old && old.title ? old.title : null %>">
-              <h3 class="small alert-danger"><%= locals.errores && errores.title ? errores.title.msg : null%> </h3>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="escribir titulo " name="name" value="<%= locals.old && old.name ? old.name : null %>">
+              <h3 class="small alert-danger"><%= locals.errores && errores.name ? errores.name.msg : null%> </h3>
 
             </div>
 
@@ -24,16 +24,16 @@
 
               <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">descripcion</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" name="extra" value="<%= locals.old && old.extra ? old.extra : null %>">
-                <h3 class="small alert-danger"><%= locals.errores && errores.extra ? errores.extra.msg : null%> </h3>
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="description" value="<%= locals.old && old.description ? old.description : null %>">
+                <h3 class="small alert-danger"><%= locals.errores && errores.description ? errores.description.msg : null%> </h3>
               </div>
           
           
             <div class="mb-3">
-              <select class="form-select"  required aria-label="select example" name="category">
+              <select class="form-select"  required aria-label="select example" name="categoryId">
                 <option value="">seleccione una categoria</option>
                 <% categorias.forEach(categoria => { %>
-                  <option value="<%= categoria %>"<%= locals.old && old.category === categoria ? 'selected' : null%> ><%= categoria %></option>
+                  <option value="<%= categoria.id %>"<%= locals.old && old.categoryId === categoria.id ? 'selected' : null%> ><%= categoria.name %></option>
                 <% }) %> 
               </select>
               <h3 class="small alert-danger"><%= locals.errores && errores.category ? errores.category.msg : null%> </h3>
