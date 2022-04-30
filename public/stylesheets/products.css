@@ -238,7 +238,7 @@ hr {
 }
 h2.products-title {
   border-bottom: 1px solid orange;
-  width: 19rem;
+  width: 35rem;
 }
 .product-box:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);

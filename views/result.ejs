@@ -11,7 +11,7 @@
     <section class="container-products">
     
       <div class="col-12">
-        <h2 class="products-title"> <%= busqueda %> </h2>
+        <h2 class="products-title"> categoria n <%= busqueda%> </h2>
       </div>
       <ul class="container-stickers">
         
@@ -21,12 +21,12 @@
               <li class="product-box">
                   <a href="/products/detail/<%= pr.id %>">
                     <figure class="product-box_image">
-                      <img src="/images/<%= pr.images %>" alt="imagen de producto">
+                      <img src="/images/<%= pr.images[0] ? pr.images[0].file  : null  %>" alt="imagen de producto">
                     </figure>
                     <article class="product-box_data">
-                      <h2><%= pr.title %></h2>
+                      <h2><%= pr.name %></h2>
                       <span>descuento % OFF</span>
-                      <p><%= pr.extra %></p>
+                      <p><%= pr.description %></p>
                       <i class="fas fa-truck"></i>
                     </article>
                   </a>

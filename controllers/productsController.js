@@ -1,10 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+
 const productos = require('../data/products_db');
-const categorias = require('../data/categories_db');
 const {validationResult} = require('express-validator')
 const db = require('../database/models')
-
+const {Op} = require('sequelize') /* operadores que me trae sequelize como el 'or' que usamos en search */
 module.exports = {
     products : (req,res) => {
 
@@ -236,11 +234,32 @@ module.exports = {
 
 
     search : (req,res) => {
-        let result = productos.filter(producto => producto.category === req.query.search)
-        return res.render('result',{
-            result,
-            productos,
-            busqueda : req.query.search /* esto para el titulo de la busqueda de banner lona etc */
-        })
+       db.Product.findAll({
+           where: {
+               [Op.or] : [
+                   {
+                       name : {
+                           [Op.substring] : req.query.search
+                       }
+                   },
+                   {
+                    categoryId : {/* que tambien me busque por descripcion en la busqueda */
+                        [Op.substring] : req.query.search
+                       }
+                   },
+               ] 
+           },
+
+           include : [
+            {association : 'images'},/* que t ambien me busque en esta vista de result las imagenes osino no muestra imagenes sin esto */
+            
+        ]
+
+
+       }).then(result => res.render('result',{
+        result, /* el if o foreach q uso en mi vista es result asi q aca pongo result para ponerlo en la vista */
+        busqueda : req.query.search /* aca me aparesca el nombre de la busqueda y no id */
+       })).catch(error => console.log(error))
+       
     }
 }
